@@ -18,13 +18,12 @@ title = "all posts"
   show_more_url = "posts"
 
 [[entries]]
-title = "posts by category"
+title = "categories"
+url = "./categories"
 
-  [entries.post_list]
-  section = "posts"
-  show_more = true
-  show_more_text = "See more posts..."
-  show_more_url = "posts"
+[[entries]]
+title = "tags"
+url = "./tags"
 
 [[entries]]
 title = "rss"
