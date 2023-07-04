@@ -1,0 +1,5 @@
+baseURL = 'http://hermitofthevalley.com/'
+languageCode = 'en-us'
+title = 'Hermit of the Valley'
+
+theme = 'hugo-theme-nostyleplease'
