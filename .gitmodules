@@ -1,3 +1,3 @@
-[submodule "hugo-theme-nostyleplease"]
-	path = themes/hugo-theme-nostyleplease
+[submodule "themes/nostyleplease"]
+	path = themes/nostyleplease
 	url = https://github.com/Masellum/hugo-theme-nostyleplease.git
