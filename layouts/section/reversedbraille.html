@@ -1,11 +1,12 @@
 <html>
     <head>
+        <title>Reversed Braille Generator</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     </head>
     <body>
         <section class="section">
             <div class="container">
-                <h1 class="title">Reversed Braille Translator</h1>
+                <h1 class="title">Reversed Braille Generator</h1>
                 <p>
                     Use this site to generate reversed and mirrored Braille characters for the provided text. 
                     This is primarily useful for hand embossing on a slate, where the text and individual characters
@@ -18,7 +19,7 @@
             <div class="container">
                 <form onsubmit="return false;">
                     <div class="field">
-                        <label class="label" for="input">Text to translate</label>
+                        <label class="label" for="input">Text to convert</label>
                         <div class="control">
                             <input class="input" type="text" size="50" id="input">
                         </div>
@@ -31,7 +32,7 @@
 
         <section class="section">
             <div class="container">
-                <h3 class="subtitle is-3">Reversed Output</h3>
+                <h3 class="subtitle is-3">Converted Output</h3>
                 <p id="translatedText"></p>
                 <div id="translation" class="is-size-2"></div>
             </div>
