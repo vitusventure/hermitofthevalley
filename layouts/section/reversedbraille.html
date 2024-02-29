@@ -48,11 +48,14 @@
 
     function translate(inputString) {
         const formatted = [...inputString].reverse().join('').toLowerCase()
-        let translated = ''
+        let translated = ""
         // Translate
         Array.from(formatted).forEach(elem => {
+            translated += "|"
             translated += reversedBraille.get(elem)
         })
+
+        translated += "|"
 
         return translated
     }
