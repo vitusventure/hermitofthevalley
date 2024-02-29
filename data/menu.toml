@@ -9,6 +9,13 @@ title = "info"
   url = "mailto:john@hermitofthevalley.com"
 
 [[entries]]
+title = "pages"
+
+  [[entries.entries]]
+  title = "Reversed Braille Converter"
+  url = "./reversedbraille"
+
+[[entries]]
 title = "all posts"
 
   [entries.post_list]
