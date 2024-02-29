@@ -1,17 +1,41 @@
 <html>
-    <head></head>
-    <body style="text-align: center;">
-        <h1>Reversed Braille Translator</h1>
+    <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    </head>
+    <body>
+        <section class="section">
+            <div class="container">
+                <h1 class="title">Reversed Braille Translator</h1>
+                <p>
+                    Use this site to generate reversed and mirrored Braille characters for the provided text. 
+                    This is primarily useful for hand embossing on a slate, where the text and individual characters
+                    must be reversed to form the proper patterns when the paper is removed.
+                </p>
+            </div>
+        </section>
 
-        <h3>Provide input:</h3>
-        <form onsubmit="return false;">
-            <input type="text" size="50" id="input">
-            <button type="submit" onclick="doTranslation();">Convert</button>
-        </form>
+        <section class="section">
+            <div class="container">
+                <form onsubmit="return false;">
+                    <div class="field">
+                        <label class="label" for="input">Text to translate</label>
+                        <div class="control">
+                            <input class="input" type="text" size="50" id="input">
+                        </div>
+                    </div>
+                    
+                    <button class="button is-link" type="submit" onclick="doTranslation();">Convert</button>
+                </form>
+            </div>
+        </section>
 
-        <h3>Output:</h3>
-        <h4 id="translatedText"></h4>
-        <div id="translation" style="font-size: 64px;"></h4>
+        <section class="section">
+            <div class="container">
+                <h3 class="subtitle is-3">Reversed Output</h3>
+                <p id="translatedText"></p>
+                <div id="translation" class="is-size-2"></div>
+            </div>
+        </section>
     </body>
 </html>
 
@@ -47,6 +71,13 @@
     }))
 
     function translate(inputString) {
+        
+
+        return translated
+    }
+
+    function doTranslation() {
+        const inputString = document.getElementById("input").value
         const formatted = [...inputString].reverse().join('').toLowerCase()
         let translated = ""
         // Translate
@@ -57,14 +88,7 @@
 
         translated += "|"
 
-        return translated
-    }
-
-    function doTranslation() {
-        const inputString = document.getElementById("input").value
-        const translated = translate(inputString)
-
-        document.getElementById("translatedText").innerText = inputString
+        document.getElementById("translatedText").innerText = formatted
         document.getElementById("translation").innerText = translated
     }
 </script>
