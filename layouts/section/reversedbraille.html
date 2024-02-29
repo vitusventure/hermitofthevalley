@@ -1,0 +1,67 @@
+<html>
+    <head></head>
+    <body style="text-align: center;">
+        <h1>Reversed Braille Translator</h1>
+
+        <h3>Provide input:</h3>
+        <form onsubmit="return false;">
+            <input type="text" size="50" id="input">
+            <button type="submit" onclick="doTranslation();">Convert</button>
+        </form>
+
+        <h3>Output:</h3>
+        <h4 id="translatedText"></h4>
+        <div id="translation" style="font-size: 64px;"></h4>
+    </body>
+</html>
+
+<script>
+    const reversedBraille = new Map(Object.entries({
+        "a": "⠈",
+        "b": "⠘",
+        "c": "⠉",
+        "d": "⠋",
+        "e": "⠊",
+        "f": "⠙",
+        "g": "⠛",
+        "h": "⠚",
+        "i": "⠑",
+        "j": "⠓",
+        "k": "⠨",
+        "l": "⠸",
+        "m": "⠩",
+        "n": "⠫",
+        "o": "⠪",
+        "p": "⠹",
+        "q": "⠻",
+        "r": "⠺",
+        "s": "⠱",
+        "t": "⠳",
+        "u": "⠬",
+        "v": "⠼",
+        "w": "⠗",
+        "x": "⠭",
+        "y": "⠯",
+        "z": "⠮",
+        " ": "⠀"
+    }))
+
+    function translate(inputString) {
+        const formatted = [...inputString].reverse().join('').toLowerCase()
+        let translated = ''
+        // Translate
+        Array.from(formatted).forEach(elem => {
+            translated += reversedBraille.get(elem)
+        })
+
+        return translated
+    }
+
+    function doTranslation() {
+        const inputString = document.getElementById("input").value
+        const translated = translate(inputString)
+
+        document.getElementById("translatedText").innerText = inputString
+        document.getElementById("translation").innerText = translated
+    }
+</script>
